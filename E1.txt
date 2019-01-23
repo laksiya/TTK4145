@@ -1,0 +1,33 @@
+# Reasons for concurrency and parallelism
+
+To complete this exercise you will have to use git. Create one or several commits that adds answers to the following questions and push it to your groups repository to complete the task.
+
+When answering the questions, remember to use all the resources at your disposal. Asking the internet isn't a form of "cheating", it's a way of learning.
+
+ ### What is concurrency? What is parallelism? What's the difference?
+ > Concurrency means that an application is making progress on more than one task at the same time. Parallelism means that an application splits its tasks up into smaller subtasks which can be processed in parallel, for instance on multiple CPUs at the exact same time. Parallel programs may process one task at at time (sequentially) while Concurrent programs work on multiple tasks at the same time (concurrently).
+
+ ### Why have machines become increasingly multicore in the past decade?
+ > The use of multicore has increased the last decad since the clock time of the CPUs has reached a point where it can’t be significantly improved. Thus, multicore machines have increased, to solve several tasks in parallel.
+
+ ### What kinds of problems motivates the need for concurrent execution?
+ (Or phrased differently: What problems do concurrency help in solving?)
+ > Concurrency increases the efficiency in a process. For an example it will if the User interface is dealt with on the prioritized thread, the loading web page may appear to load faster to the user.
+
+ ### Does creating concurrent programs make the programmer's life easier? Harder? Maybe both?
+ (Come back to this after you have worked on part 4 of this exercise)
+ > *Your answer here*
+
+ ### What are the differences between processes, threads, green threads, and coroutines?
+ > Processes are entire program, and it is more difficult to make two processes cooperate since they can’t share variables. Threads are subtasks of processes, where multiple threads can be executed concurrently. Green threads are "user-level threads". They are scheduled by an "ordinary" user-level process, not by the kernel. So they can be used to simulate multi-threading on platforms that don't provide that capability. Coroutines are a form of sequential processing: only one is executing at any given time .
+ ### Which one of these do `pthread_create()` (C/POSIX), `threading.Thread()` (Python), `go` (Go) create?
+ > Creates a thread object.
+
+ ### How does pythons Global Interpreter Lock (GIL) influence the way a python Thread behaves?
+ > GIL, is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecodes at once.  This lock is necessary mainly because CPython's memory management is not thread-safe.
+
+ ### With this in mind: What is the workaround for the GIL (Hint: it's another module)?
+ > 1)	Use the multiprocess module 2) Use threaded extensions in C where GIL is not a problem (Numexpr, NumPy with MKL, SciPy with FFTW) 3) Use Cython's parallel features:
+
+ ### What does `func GOMAXPROCS(n int) int` change?
+ > GOMAXPROCS sets the maximum number of CPUs that can be executing simultaneously and returns the previous setting. If n < 1, it does not change the current setting.
