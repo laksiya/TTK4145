@@ -1,0 +1,31 @@
+# Mutex and Channel basics
+
+### What is an atomic operation?
+> An operation during which a processor can simultaneously read a location and write it in the same bus operation. This prevents any other processor or I/O device 
+from writing or reading memory until the operation is complete.
+
+### What is a semaphore?
+> A semaphore is an integer flag with value always greater than or equal to 0
+Can be used to signal if a resouce is being used or not.
+
+### What is a mutex?
+> A concept of ownership, where one thread owns the mutex and the other threads has t
+to wait for the other thread to gie the mutex.
+
+### What is the difference between a mutex and a binary semaphore?
+> Binary sempahore waith for the other thread to give a signal. When the signal
+is given it does something and unblocks.
+
+### What is a critical section?
+> Critical section is the code that shall be run on the resource that the mutex holds.
+
+### What is the difference between race conditions and data races?
+ > A race condition is a flaw that occurs when the timing or ordering of events affects a program’s correctness.
+A data race happens when two programs or threads access the same memory location and interrrupt each others
+read and write operations.
+
+### List some advantages of using message passing over lock-based synchronization primitives.
+> *Your answer here*
+
+### List some advantages of using lock-based synchronization primitives over message passing.
+> *Your answer here*
